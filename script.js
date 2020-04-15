@@ -1,4 +1,5 @@
 var theQuestion = document.querySelector("#header");
+var instructionPara = document.querySelector("#instructions");
 var choicesContainer = document.querySelector(".choices");
 var aEl = document.querySelector("#choices-a");
 var bEl = document.querySelector("#choices-b");
@@ -6,12 +7,11 @@ var cEl = document.querySelector("#choices-c");
 var dEl = document.querySelector("#choices-d");
 var start = document.querySelector("#startButton");
 var timer = document.querySelector("#timer");
-var finalScore = document.querySelector("#scoreCard");
 var displayAnswer = document.querySelector("#answer");
-var instructionPara = document.querySelector("#instructions");
 
 var score = 0;
 var currentIndex = 0;
+var secondsLeft = 60;
 
 // Array of questions & answers
 let questionsArr = [
@@ -108,9 +108,10 @@ startBtn.addEventListener("click", function() {
     theQuestion.textContent = questionsArr[currentIndex].question;
 
     renderQuiz();
+    setTimer();
 });
 
-function renderQuiz() {
+renderQuiz = () => {
     // Show answer A
     var choice1Btn = document.createElement("button");
     choice1Btn.innerHTML = questionsArr[currentIndex].answer[0];
@@ -158,7 +159,7 @@ function renderQuiz() {
                 score += 10;
             } else {
                 displayAnswer.textContent = "-- Incorrect! --";
-                // secondsLeft -= 10;
+                secondsLeft -= 15;
             }
         }
         checkAnswer();
@@ -179,5 +180,18 @@ function renderQuiz() {
     
 }
 
+// Set timer to countdown
+setTimer = () => {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timer.textContent = "Timer: " + secondsLeft + " seconds";
 
+        if (secondsLeft <= 0) {
+            clearInterval(timerInterval);
+            timer.textContent = "Timer: 0 seconds";
+            alert("Time's Up!");
+            // sendMessage();
+        }
+    }, 1000)
+};
 
