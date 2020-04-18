@@ -207,7 +207,6 @@ setTimer = () => {
 finishScreen = () => {
     choicesContainer.remove();
     displayAnswer.remove();
-    var initials = inputBox.value;
     theQuestion.textContent = "Coding Quiz Challenge";
 
     scoreCard.innerHTML = "Your final score is: " + score;
@@ -219,6 +218,7 @@ finishScreen = () => {
     // Event listener for submit button & store info into local storage & display on page
     saveScoreBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        var initials = inputBox.value;
 
         scoresArr.push({
             Initials: initials,
