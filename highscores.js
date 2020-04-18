@@ -8,7 +8,7 @@ console.log(scoresArr);
 
 for (var i = 0; i < scoresArr.length; i++) {
     var newScore = document.createElement("li");
-    newScore.textContent = scoresArr[i].Initials + " - " + scoresArr[i].Score;
+    newScore.textContent = scoresArr[i].initials + " - " + scoresArr[i].score;
     scoreboard.appendChild(newScore);
 }
 
