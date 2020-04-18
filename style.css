@@ -4,8 +4,10 @@
     padding: 2px;
 }
 
-.choices {
-    padding: 3px;
+.btnStyles {
+    padding: 10px;
+    border: 2px dashed black;
+    min-width: 500px;
 }
 
 h1, #startButton {
@@ -17,3 +19,9 @@ h1, #startButton {
     padding: 20px;
     margin: 10px;
 }
+
+li {
+    list-style: none;
+ }
+
+ 
