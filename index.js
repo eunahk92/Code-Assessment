@@ -157,7 +157,6 @@ renderQuiz = () => {
             if (userAnswerValue === questionsArr[currentIndex].correct) {
                 displayAnswer.textContent = "-- Correct! --";
                 score += 10;
-                console.log(score);
             }
             if (userAnswerValue != questionsArr[currentIndex].correct) {
                 displayAnswer.textContent = "-- Incorrect! --";
@@ -174,7 +173,6 @@ renderQuiz = () => {
             if (userAnswerValue === questionsArr[currentIndex].correct) {
                 displayAnswer.textContent = "-- Correct! --";
                 score += 10;
-                console.log(score);
             }
             if (userAnswerValue != questionsArr[currentIndex].correct) {
                 displayAnswer.textContent = "-- Incorrect! --";
