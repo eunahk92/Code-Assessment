@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Assessment Highscores</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <header>
+        <h2 id="header">Coding Quiz Challenge</h2>
+
+        <!-- Title of page -->
+        <h3 id="#doneMessage">Congrats! All done!</h3>
+    </header>
+    <main>
+        <div class="score-container">
+            <!-- List of high scores-->
+            <ul class="high-scores"></ul>
+        </div>
+
+        <!-- Button to take back to the quiz & clear scores -->
+        <form>
+            <input type="submit" id="to-quiz" value="Back to Quiz" class="btn btn-dark"> 
+            <input type="submit" id="clear-scores" class="btn btn-dark" value="Clear Scoreboard"> 
+        </form>
+
+    </main>
+    <script src="./highscores.js"></script>
+
+</body>
+</html>
