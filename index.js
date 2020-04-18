@@ -106,7 +106,7 @@ start.addEventListener("click", function() {
     instructionPara.remove();
     start.remove();
     // Show the current question
-    theQuestion.textContent = questionsArr[currentIndex].question;
+    theQuestion.innerHTML = questionsArr[currentIndex].question + " <div>";
 
     renderQuiz();
     setTimer();
@@ -216,12 +216,23 @@ finishScreen = () => {
     // Event listener for submit button & store info into local storage & display on page
     saveScoreBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        var initials = inputBox.value;
+        var initials = inputBox.value.trim().toUpperCase();
 
-        scoresArr.push({
-            Initials: initials,
-            Score: score
-        })
+        var initialsExist = false;
+        for (var i = 0; i < scoresArr.length; i++) {
+            if (scoresArr[i].initials === initials) {
+                if (scoresArr[i].score < score) {
+                    scoresArr[i].score = score;
+                }
+                initialsExist = true;
+            } 
+        }
+        if (!initialsExist) {
+            scoresArr.push({
+                initials: initials,
+                score: score
+            })
+        }
 
         localStorage.setItem("Highscore", JSON.stringify(scoresArr));
 
