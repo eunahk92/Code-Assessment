@@ -1,5 +1,7 @@
 # code-assessment
 
+Test your knowledge of HTML, CSS, & JS with this 10 question code assessment. The user has 60 seconds to complete it. For every question the user gets correct, 10 points is awarded. For every question the user gets incorrect, 10 seconds is deducted from the timer.
+
 ## User Story
 
 ```
