@@ -226,7 +226,6 @@ finishScreen = () => {
         })
 
         localStorage.setItem("Highscore", JSON.stringify(scoresArr));
-        console.log(scoresArr);
 
         // Linking next page for highscores
         location.href = "highscores.html";
